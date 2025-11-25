@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHAKARGANG</title>
+<style>
+    /* Dark theme & font */
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+        color: #f5f5f5;
+        overflow-x: hidden;
+    }
+
+    /* Header / Hero */
+    header {
+        text-align: center;
+        padding: 60px 20px;
+        background: #0a0a0a;
+        position: relative;
+        overflow: hidden;
+    }
+
+    header h1 {
+        font-size: 3em;
+        letter-spacing: 6px;
+        color: #ff1a1a;
+        margin: 0;
+        animation: flicker 2s infinite;
+        position: relative;
+        z-index: 1;
+    }
+
+    header p {
+        font-size: 1.2em;
+        color: #ccc;
+        margin-top: 10px;
+    }
+
+    /* Flicker animation */
+    @keyframes flicker {
+        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+        20%, 22%, 24%, 55% { opacity: 0.4; }
+    }
+
+    /* Gang motto section */
+    .motto {
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 1.3em;
+        color: #ff4d4d;
+        font-style: italic;
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+
+    /* Members layout */
+    .members {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        padding: 50px 20px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .member-card {
+        background-color: #1a1a1a;
+        border: 2px solid #ff1a1a;
+        border-radius: 15px;
+        width: 260px; /* increased to fit bigger images */
+        text-align: center;
+        padding: 25px; /* increased padding for balance */
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .member-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px #ff1a1a, 0 0 50px #ff4d4d inset;
+    }
+
+    /* Square image + hover effect */
+    .member-card img {
+        width: 200px;  /* bigger image */
+        height: 200px; /* bigger image */
+        object-fit: cover;
+        border: 3px solid #ff1a1a;
+        transition: transform 0.5s, box-shadow 0.5s;
+        border-radius: 0; /* square images */
+    }
+
+    .member-card img:hover {
+        transform: translateY(-20px) scale(1.2); /* rise + scale */
+        box-shadow: 0 0 40px #ff4d4d, 0 0 60px #ff1a1a inset; /* stronger glow */
+    }
+
+    .member-card h2 {
+        margin: 20px 0 5px;
+        color: #ff4d4d;
+    }
+
+    .member-card h3 {
+        margin: 5px 0;
+        font-weight: normal;
+        color: #ff9999;
+    }
+
+    .member-card p {
+        font-size: 0.9em;
+        color: #ccc;
+    }
+
+    /* Highlight Circuit */
+    .mastermind {
+        border: 3px solid #ff1a1a;
+        box-shadow: 0 0 30px #ff1a1a;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 30px #ff1a1a; }
+        50% { box-shadow: 0 0 50px #ff4d4d; }
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 30px 10px;
+        background-color: #1a1a1a;
+        color: #888;
+        border-top: 1px solid #333;
+    }
+
+    /* Background smoke effect */
+    header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,0,0,0.05) 0%, transparent 70%);
+        animation: moveSmoke 20s linear infinite;
+        pointer-events: none;
+    }
+
+    @keyframes moveSmoke {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>SHAKARGANG</h1>
+    <p></p>
+</header>
+
+<div class="motto">
+    THANDAY PANI WICH PER NA PAI , KAKA ASI SHAKARGARI AAN SADAY NAL WER NA PAI
+</div>
+
+<section class="members">
+    <!-- Top Row -->
+    <div class="row">
+        <div class="member-card">
+            <img src="baba saim.jpg" alt="BABA BADMASH">
+            <h2>BABA BADMASH</h2>
+            <h3>CO-LEADER</h3>
+            <p><b>Jatt Da Swag Ae King-size,
+                  Gallan Vich Style Te Nazran Ch fire </b></p>
+        </div>
+
+        <div class="member-card mastermind">
+            <img src="circuitt.jpg" alt="CIRCUIT">
+            <h2>CIRCUIT</h2>
+            <h3>MASTERMIND</h3>
+            <p>
+                <b>Uton Khamosh , Te Andaron Toofan
+                 Samandar Wargi Tere Pai Di Pehchan </b>
+            </p>
+        </div>
+
+        <div class="member-card">
+            <img src="haad.jpg" alt="MUNNA BADMASH">
+            <h2>MUNNA BADMASH</h2>
+            <h3>LEADER</h3>
+            <p><b>Saday Naal Panga Na Lai,
+              Sher De Nal Khedan Ale Zinda Nahi Bachday!</b></p>
+        </div>
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="row">
+        <div class="member-card">
+            <img src="bagga badmash.jpg" alt="BAGGA BADMASH">
+            <h2>BAGGA BADMASH</h2>
+            <h3>LEFT HAND</h3>
+            <p><b>Jutt Da Nature Wakhra aye ,
+               Naal Pyar Vi Karda Aye , Te Vaar Vi</b>
+            </p>
+        </div>
+
+        <div class="member-card">
+            <img src="billa qasim.jpg" alt="BILLA BADMASH">
+            <h2>BILLA BADMASH</h2>
+            <h3>RIGHT HAND</h3>
+            <p><b>Asi oh bande aan jo kise de kehn te nai,
+                  Jithe khade ho jayiye, game change ho jandi ae!</b></p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 SHAKARGANG. All chaos reserved. | Follow us on Socials
+</footer>
+
+</body>
+</html>
